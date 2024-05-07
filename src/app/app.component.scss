@@ -1,0 +1,30 @@
+.loading-overlay {
+  position: fixed; // Posicionamiento fijo para cubrir toda la pantalla
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); // Fondo negro semi-transparente
+  display: flex;
+  justify-content: center; // Centrar horizontalmente
+  align-items: center; // Centrar verticalmente
+  z-index: 9999; // Asegurar que el overlay esté sobre otros elementos
+
+  .spinner {
+    width: 50px; // Tamaño del spinner
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3); // Color del borde del spinner
+    border-top-color: #fff; // Color del borde superior (parte del spinner que "gira")
+    border-radius: 50%; // Hacerlo circular
+    animation: spin 1s linear infinite; // Animación que hace girar el spinner
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); // Inicio de la animación
+  }
+  100% {
+    transform: rotate(360deg); // Fin de la animación
+  }
+}

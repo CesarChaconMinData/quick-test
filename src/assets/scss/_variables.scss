@@ -1,0 +1,25 @@
+/*Variables*/
+@import "./colors";
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/assets/fonts/Montserrat-Bold.ttf");
+}
+
+$base-font-regular: 'Montserrat';
+$base-font-bold: 'Montserrat-Bold';
+
+$margin-small: 20px;
+$margin-medium: 60px;
+$margin-large: 80px;
+
+/*Buttons*/
+$border-radius-button: 6px;
+$font-color-button: white;
+
+/*Colors*/

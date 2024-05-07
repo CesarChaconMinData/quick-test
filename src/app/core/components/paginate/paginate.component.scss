@@ -1,0 +1,47 @@
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  border: 1px solid #007bff; /* Borde azul */
+  color: #007bff;
+  background-color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px; /* Bordes redondeados para los botones */
+  cursor: pointer;
+  &__number {
+    border: none;
+  }
+}
+
+.page-link:hover {
+  background-color: #007bff; /* Cambia el fondo al pasar el mouse */
+  color: #fff;
+}
+
+.page-link[disabled] {
+  color: #ccc;
+  cursor: not-allowed;
+  background-color: #f8f9fa;
+}
+
+.page-link.active {
+  background-color: #007bff; /* Fondo azul para la página actual */
+  color: #fff;
+}
+
+.select-pages {
+  width: 60px;
+  height: 100%;
+  border-radius: 4px;
+
+}

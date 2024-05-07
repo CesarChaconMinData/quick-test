@@ -1,0 +1,24 @@
+<div class="flex flex-row">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let item of headerColumns; trackBy: trackByIndex">
+          {{ item }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data; let i = index">
+        <ng-container *ngFor="let prop of item | keyvalue">
+          <td>{{ prop?.value }}</td>
+        </ng-container>
+        <td *ngIf="withActions" class="flex justify-center">
+          <div class="flex justify-between w-50">
+            <button [title]="tooltipDelete" (click)="actionSend(actionTable.DELETE, item)"><app-icons name="delete" size="24"></app-icons></button>
+            <button [title]="tooltipEdit" (click)="actionSend(actionTable.EDIT, item)"><app-icons name="edit" size="24"></app-icons></button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

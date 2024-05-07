@@ -1,0 +1,31 @@
+<div class="flex flex-column">
+  <p class="flex justify-center fs-10">{{titleForm}}</p>
+  <ng-container [formGroup]="heroForm">
+    <div class="mt-100">
+      <div class="flex flex-column mb-5">
+        <label for="name" class="mb-5">Nombre del Heroe</label>
+        <input
+          id="name"
+          class="input-hero mb-10"
+          type="text"
+          placeholder="Ingrese Nombre"
+          formControlName="name"
+        />
+      </div>
+      <div class="flex flex-column">
+        <label for="power" class="mb-5">Poder del Heroe</label>
+        <input
+          id="power"
+          class="input-hero"
+          type="text"
+          placeholder="Ingrese el Poder que lo caracteriza"
+          formControlName="power"
+        />
+      </div>
+    </div>
+  </ng-container>
+  <div class="flex justify-between mt-30">
+    <button class="btn ph-20" (click)="back()">Volver al listado de Heroes</button>
+    <button class="btn" (click)="saveEmit()" [ngClass]="{'btn-disabled': heroForm.invalid}" [disabled]="heroForm.invalid">Guardar</button>
+  </div>
+</div>

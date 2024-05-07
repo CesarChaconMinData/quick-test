@@ -1,0 +1,26 @@
+<nav>
+  <ul class="pagination">
+    <li class="m-5">
+      <button class="page-link" (click)="onPrev()" [disabled]="currentPage === 1"><</button>
+    </li>
+    <ng-container *ngIf="pagesToShow()?.length" >
+      <li class="m-5" *ngFor="let page of pagesToShow(); trackBy:trackByIndex">
+        <button *ngIf="page; else dots" class="page-link page-link__number" [class.active]="page === currentPage" (click)="goToPage(page)">
+          {{ page }}
+        </button>
+        <ng-template #dots><span class="page-link__number">...</span></ng-template>
+      </li>
+    </ng-container>
+    <li class="m-5">
+      <button class="page-link" (click)="onNext()" [disabled]="currentPage === totalPages">></button>
+    </li>
+  </ul>
+  <div class="pagination">
+    <label class="m-10" for="pageSize">{{rowByPageTitle}}</label>
+    <select class="select-pages page-link m-10" id="pageSize" [value]="itemsPerPage" (change)="onItemsPerPageChange($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+  </div>
+</nav>

@@ -1,0 +1,28 @@
+@import "./variables";
+
+.btn {
+  border-radius: $border-radius-button;
+  border-color: white;
+  border-width: 1px;
+  color: $font-color-button;
+  background-color: $primary;
+  min-width: 200px;
+  min-height: 50px;
+  font-size: large;
+  &:hover {
+    background-color: $secondary;
+  }
+  &-disabled {
+    background-color: gray;
+    &:hover {
+      background-color: gray;
+    }
+
+  }
+  &-alert {
+    background-color: red;
+    &:hover {
+      background-color: rgb(185, 114, 114);
+    }
+  }
+}

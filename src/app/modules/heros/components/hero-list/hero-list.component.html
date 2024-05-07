@@ -1,0 +1,32 @@
+<div class="flex flex-column">
+  <p class="flex justify-center fs-10 mb-100">Listado de Heroes</p>
+  <div class="flex w-100 justify-between pb-10">
+    <input #search class="input-hero" appUppercase appSearchValue [dataArray]="pagedItems()" (filteredData)="handleFilteredData($event)" type="text" placeholder="Busca tu heroe!">
+    <button class="btn" (click)="addHero()">Agregar Heroe</button>
+  </div>
+
+  <app-table
+    [data]="pagedItems()"
+    [headerColumns]="headerColumns"
+    [withActions]="true"
+    [tooltipDelete]="tooltipDelete"
+    [tooltipEdit]="tooltipEdit"
+    (eventAction)="onActionEvent($event)"
+  ></app-table>
+
+  <app-paginate
+    *ngIf="data()?.length"
+    [totalItems]="data().length"
+    [itemsPerPage]="itemsPerPage"
+    (pageChanged)="onPageChanged($event)"
+    (itemPerPageEvent)="newItemsPerPage($event)"
+  ></app-paginate>
+</div>
+
+<app-dialog
+  *ngIf="showDialog"
+  [titleDialog]="titleDialog"
+  [subTitleDialog]="subTitleDialog"
+  (confirm)="deleteHero()"
+  (cancel)="showDialog = false"
+></app-dialog>
